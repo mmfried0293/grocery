@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 
 
 function App() {
+  //app level vars
   let [stateVariableName, setStateVariableName] = useState({});
   return (
     <main >
