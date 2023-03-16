@@ -14,8 +14,10 @@ function App() {
   return (
     <main >
       <Header /*pass in stateVariable*/ />
-      <CreateItem />
-      <Items />
+      <Routes>
+      <Route path= '/create' element= {<CreateItem />}/>
+      <Route path= '/' element= {<Items />}/>
+      </Routes>
       {/* <Routes>
         <Route path='/path?' element= {<Component stateVariable={stateVariable} setStateVariable={setstateVariable} />} />
         <Route></Route>
