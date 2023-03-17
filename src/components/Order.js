@@ -16,10 +16,24 @@ const Order = (props)=>{
 
     return (<article>
             <h1>Place Your Order Here</h1>
-            <form>
+            <form method="post" action="http://localhost:8000/order/create">
 
-                <select>
-                <option> Select Item</option>
+                
+                
+                
+
+                 <table>
+                    <thead>
+                    <th>Item Name</th>
+                    <th>Price </th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td><select name="ItemId" value={props.itemId}>
+                <option > Select Item</option>
                 {props.itemList.map((item) =>{
                     return <option key={item.itemId} value= {item.itemId}> 
                                 {item.name}
@@ -27,7 +41,16 @@ const Order = (props)=>{
                     
                 
                 })}
-                </select>
+                </select></td>
+                        
+                <td> </td>
+                   <td><input name="quantity" placeholder="Enter Quantity" type="number"></input></td>
+                   <td></td>
+                   <td><button>Add</button></td></tr>
+                    </tbody>
+                   
+                    </table>   
+
                     
                 
 
