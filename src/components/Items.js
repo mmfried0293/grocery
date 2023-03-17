@@ -1,25 +1,25 @@
 import Item from './Item'
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-const Items = ()=> {
-    const [itemList, setItemList] = useState([]);
+
+const Items = (props)=> {
     async function fetchItems() {
         let res = await fetch('http://localhost:8000/items/json');
-
+    
         let data = await res.json();
-        setItemList(data);
+        props.setItemList(data);
     }
-
+    
     useEffect(() => {
         fetchItems();
     }, []);
+
     return (<article>
         <div>
                 <h2>Item List</h2>
                 <ul>
                     {
-                        itemList.map((item)=>{
+                        props.itemList.map((item)=>{
                             return <Item
                             key={item.itemId}
                             {...item}

@@ -5,7 +5,7 @@ const CreateItem = () => {
                 <input name="name" placeholder="Item Name" type="text"></input>
                 <input name="price" placeholder="Price" type="number" step="0.01"></input>
                 <input name="image" placeholder="Select Image" type='file'></input>
-                <input name="itemId" placeholder="id" type='number'></input>
+                {/* <input name="itemId" placeholder="id" type='number'></input> */}
                 <button type="submit"></button>
             </form>
         </div>
