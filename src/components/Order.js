@@ -17,7 +17,7 @@ const Order = (props)=>{
 
     const getOrderList = () => {
         async function fetchOrders(){
-            let res = await fetch('http://localhost:8000/orders/json');
+            let res = await fetch('http://localhost:8000/order/json');
 
             let data = await res.json();
             setOrderList(data);
