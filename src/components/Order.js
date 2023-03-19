@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Order = (props)=>{
 
@@ -12,6 +12,18 @@ const Order = (props)=>{
     useEffect(() => {
         fetchItems();
     }, []);
+
+    const [orderList, setOrderList] = useState([]);
+
+    const getOrderList = () => {
+        async function fetchOrders(){
+            let res = await fetch('http://localhost:8000/orders/json');
+
+            let data = await res.json();
+            setOrderList(data);
+
+        }
+    }
 
 
     return (<article>
